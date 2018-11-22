@@ -7,7 +7,7 @@ I am newbie and I don't have much time to complete this as library or make PR to
 
 I hope this demo can at least give you ideas on how to integrate Google Pay to your app.
 
-##Functions
+## Functions
 
 This app only have **two functions.**
 
