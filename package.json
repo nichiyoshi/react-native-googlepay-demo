@@ -1,0 +1,26 @@
+{
+  "name": "googlepay",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "android-debug": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
+  },
+  "dependencies": {
+    "react": "16.6.1",
+    "react-native": "0.57.5",
+    "react-native-vector-icons": "^6.1.0"
+  },
+  "devDependencies": {
+    "babel-jest": "23.6.0",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.49.2",
+    "react-test-renderer": "16.6.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "main": "index.js",
+  "license": "MIT"
+}
