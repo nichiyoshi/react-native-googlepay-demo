@@ -5,7 +5,9 @@ import android.app.Application;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
+import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.shell.MainReactPackage;
+import com.facebook.react.uimanager.ViewManager;
 import com.facebook.soloader.SoLoader;
 import com.oblador.vectoricons.VectorIconsPackage;
 
@@ -26,7 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
                 new MainReactPackage(),
                 new GooglePayPackage(),
                 new VectorIconsPackage()
-      );
+        );
     }
 
     @Override
