@@ -30,3 +30,7 @@ that's all, it's very simple.
 
 ### only gateway, not direct
 **The payment tokenization method** used in this app is **only gateway**.
+
+## Reference
+- [Google Pay API](https://developers.google.com/pay/api/android/guides/setup)
+- [react-native-payments](https://github.com/naoufal/react-native-payments)
