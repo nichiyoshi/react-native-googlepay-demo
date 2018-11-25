@@ -71,6 +71,9 @@ export default class App extends Component {
    */
   onPressPay = async () => {
     const token = await GooglePayModule.requestPayment(
+      // You can change environment here
+      // GooglePayModule.ENVIRONMENT_TEST is for testing
+      // GooglePayModule.ENVIRONMENT_PRODUCTION is for product
       GooglePayModule.ENVIRONMENT_TEST,
       request
     ).catch(error => this.setState({ text: `error: ${error}` }))
