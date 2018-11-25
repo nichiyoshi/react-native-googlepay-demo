@@ -33,4 +33,6 @@ that's all, it's very simple.
 
 ## Reference
 - [Google Pay API](https://developers.google.com/pay/api/android/guides/setup)
+- [React Native - Native Modules](https://facebook.github.io/react-native/docs/native-modules-android)
+- [React Native - Native Components](https://facebook.github.io/react-native/docs/native-components-android)
 - [react-native-payments](https://github.com/naoufal/react-native-payments)
