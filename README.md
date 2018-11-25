@@ -1,9 +1,9 @@
 # react-native-googlepay-demo
-Google Play sample for React Native App
+Google Pay sample for React Native App
 
 ![screenshot_20181122-211757](https://user-images.githubusercontent.com/40135056/48903320-88abbd00-ee9e-11e8-9017-a7ee3590baf1.png)
 
-since [react-native-payments](https://github.com/naoufal/react-native-payments) does not support `Google Pay`, I made an demo app to show how to write native code and use it.
+Since [react-native-payments](https://github.com/naoufal/react-native-payments) does not support `Google Pay`, I made an demo app to show how to write native code and use it.
 
 I am newbie and I don't have much time to complete this as library or make PR to react-native-payments.
 
