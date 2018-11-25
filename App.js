@@ -13,7 +13,6 @@ import {
   View,
   TouchableOpacity
 } from 'react-native'
-import Icon from 'react-native-vector-icons/FontAwesome'
 import GooglePayModule, { GooglePayImage } from './lib/googlepayModule'
 
 /**

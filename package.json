@@ -1,5 +1,5 @@
 {
-  "name": "googlepay",
+  "name": "RNGooglepayDemo",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -9,8 +9,7 @@
   },
   "dependencies": {
     "react": "16.6.1",
-    "react-native": "0.57.5",
-    "react-native-vector-icons": "^6.1.0"
+    "react-native": "0.57.5"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
