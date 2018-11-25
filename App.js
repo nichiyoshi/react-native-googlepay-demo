@@ -8,18 +8,24 @@
 
 import React, { Component } from 'react'
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
-  Alert
+  TouchableOpacity
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import GooglePayModule, { GooglePayImage } from './lib/googlepayModule'
 
+/**
+ * Variery of cards your gateway accept
+ * @type {Array}
+ */
 const cardNetworks = ['AMEX', 'JCB', 'MASTERCARD', 'VISA']
 
+/**
+ * Request
+ * @type {Object}
+ */
 const request = {
   cardPaymentMethodMap: {
     gateway: {
@@ -29,6 +35,7 @@ const request = {
     cardNetworks
   },
   transaction: {
+    // this is just sample so price is fixed.
     totalPrice: '200',
     totalPriceStatus: 'FINAL',
     currencyCode: 'JPY'
@@ -45,6 +52,9 @@ export default class App extends Component {
     }
   }
 
+  /**
+   * Called when "Check if Google Pay is available" button is pressed
+   */
   onPressCheck = async () => {
     const isAvailable = await GooglePayModule.possiblyShowGooglePayButton(
       GooglePayModule.ENVIRONMENT_TEST,
@@ -52,18 +62,23 @@ export default class App extends Component {
     ).catch(error => {
       console.warn(error.toString())
       return false
-      })
+    })
 
     this.setState({ isAvailable })
   }
 
+  /**
+   * Called when Google Pay button is pressed
+   */
   onPressPay = async () => {
     const token = await GooglePayModule.requestPayment(
       GooglePayModule.ENVIRONMENT_TEST,
       request
     ).catch(error => this.setState({ text: `error: ${error}` }))
 
-    this.setState({ text: `token: ${token}` })
+    if (token) {
+      this.setState({ text: `token: ${token}` })
+    }
   }
 
   render() {
@@ -97,7 +112,9 @@ export default class App extends Component {
           disabled={isAvailable !== true}
           onPress={this.onPressPay}
           style={{ marginTop: 50 }}>
-          <GooglePayImage style={[styles.button, {opacity: isAvailable === true? 1 : 0.3}]} />
+          <GooglePayImage
+            style={[styles.button, { opacity: isAvailable === true ? 1 : 0.3 }]}
+          />
         </TouchableOpacity>
 
         <Text style={{ marginTop: 20 }}>{text}</Text>
