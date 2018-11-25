@@ -12,7 +12,8 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  Alert
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import GooglePayModule, { GooglePayImage } from './lib/googlepayModule'
@@ -48,7 +49,10 @@ export default class App extends Component {
     const isAvailable = await GooglePayModule.possiblyShowGooglePayButton(
       GooglePayModule.ENVIRONMENT_TEST,
       cardNetworks
-    ).catch(error => console.log(error))
+    ).catch(error => {
+      console.warn(error.toString())
+      return false
+      })
 
     this.setState({ isAvailable })
   }
@@ -93,7 +97,7 @@ export default class App extends Component {
           disabled={isAvailable !== true}
           onPress={this.onPressPay}
           style={{ marginTop: 50 }}>
-          <GooglePayImage style={styles.button} />
+          <GooglePayImage style={[styles.button, {opacity: isAvailable === true? 1 : 0.3}]} />
         </TouchableOpacity>
 
         <Text style={{ marginTop: 20 }}>{text}</Text>
